@@ -1,0 +1,114 @@
+{
+  "name": "eval_dataset_image_3features_kld",
+  "description": "2つの画像データ群を入力し、その明度分布についてKLD(KLダイバージェンス、KL情報量)を算出する\nKLDが0に近いほど、2つの画像群は同じ明度特徴を再現していると評価できる",
+  "source_repository": "https://github.com/aistairc/Qunomon_AIT_eval_dataset_image_3features_kld",
+  "version": "0.2",
+  "quality": "https://ait-hub.pj.aist.go.jp/ait-hub/api/0.0.1/qualityDimensions/機械学習品質マネジメントガイドライン第三版/B-1データセットの被覆性",
+  "keywords": [
+    "KLD",
+    "image",
+    "brightness"
+  ],
+  "references": [],
+  "licenses": [
+    "Apache License Version 2.0"
+  ],
+  "inventories": [
+    {
+      "name": "datasetA",
+      "type": "dataset",
+      "description": "画像データ群AのZIPファイル ※画像はjpg",
+      "requirement": {
+        "format": [
+          "zip"
+        ]
+      }
+    },
+    {
+      "name": "datasetB",
+      "type": "dataset",
+      "description": "画像データ群BのZIPファイル ※画像はjpg",
+      "requirement": {
+        "format": [
+          "zip"
+        ]
+      }
+    }
+  ],
+  "parameters": [],
+  "report": {
+    "measures": [
+      {
+        "name": "KLD_of_brightness",
+        "type": "float",
+        "description": "明度分布のKullback-Leibler divergenceの値",
+        "structure": "single"
+      },
+      {
+        "name": "KLD_of_contrast",
+        "type": "float",
+        "description": "コントラスト分布のKullback-Leibler divergenceの値",
+        "structure": "single"
+      },
+      {
+        "name": "KLD_of_exposure",
+        "type": "float",
+        "description": "露光分布のKullback-Leibler divergenceの値",
+        "structure": "single"
+      }
+    ],
+    "resources": [
+      {
+        "name": "histogram_of_brightness_for_datasetA",
+        "type": "picture",
+        "description": "datasetAの明度視点のヒストグラム"
+      },
+      {
+        "name": "histogram_of_brightness_for_datasetB",
+        "type": "picture",
+        "description": "datasetBの明度視点のヒストグラム"
+      },
+      {
+        "name": "histogram_of_brightness_for_datasetA_and_datasetB",
+        "type": "picture",
+        "description": "datasetA,Bの明度視点のヒストグラムをまとめて表示"
+      },
+      {
+        "name": "histogram_of_contrast_for_datasetA",
+        "type": "picture",
+        "description": "datasetAのコントラストのヒストグラム"
+      },
+      {
+        "name": "histogram_of_contrast_for_datasetB",
+        "type": "picture",
+        "description": "datasetBのコントラストのヒストグラム"
+      },
+      {
+        "name": "histogram_of_contrast_for_datasetA_and_datasetB",
+        "type": "picture",
+        "description": "datasetA,Bのコントラストのヒストグラムをまとめて表示"
+      },
+      {
+        "name": "histogram_of_exposure_for_datasetA",
+        "type": "picture",
+        "description": "datasetAの露光のヒストグラム"
+      },
+      {
+        "name": "histogram_of_exposure_for_datasetB",
+        "type": "picture",
+        "description": "datasetBの露光のヒストグラム"
+      },
+      {
+        "name": "histogram_of_exposure_for_datasetA_and_datasetB",
+        "type": "picture",
+        "description": "datasetA,Bの露光のヒストグラムをまとめて表示"
+      }
+    ]
+  },
+  "downloads": [
+    {
+      "name": "Log",
+      "description": "AIT実行ログ"
+    }
+  ]
+}

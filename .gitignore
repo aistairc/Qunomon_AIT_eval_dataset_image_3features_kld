@@ -1,0 +1,10 @@
+tool/docker/jupyter/resolve-dependencies.sh
+local_qai/mnt/ip
+.ipynb_checkpoints
+.Trash-*
+ait.log
+
+develop/aug_test
+develop/aug_train
+develop/aug_test.csv
+develop/aug_train.csv
