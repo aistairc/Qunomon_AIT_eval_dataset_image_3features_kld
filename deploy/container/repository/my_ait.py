@@ -38,7 +38,7 @@
 
 # [uneditable]
 
-# In[ ]:
+# In[1]:
 
 
 # Determine whether to start AIT or jupyter by startup argument
@@ -169,25 +169,43 @@ if not is_ait_launch:
     
     manifest_genenerator = AITManifestGenerator(current_dir)
     manifest_genenerator.set_ait_name('eval_dataset_image_3features_kld')
-    manifest_genenerator.set_ait_description('2つの画像データ群を入力し、その明度分布についてKLD(KLダイバージェンス、KL情報量)を算出する\nKLDが0に近いほど、2つの画像群は同じ明度特徴を再現していると評価できる')
+    ait_description = (
+        '2つの画像データ群を入力し、それらの明度、コントラスト、露光の分布についてKLD(KLダイバージェンス、KL情報量)を算出する。\n'
+        'KLDが0に近いほど、2つの画像群は同じ特徴を再現していると評価できる。'
+    )
+    manifest_genenerator.set_ait_description(ait_description)
     manifest_genenerator.set_ait_source_repository('https://github.com/aistairc/Qunomon_AIT_eval_dataset_image_3features_kld')
     manifest_genenerator.set_ait_version('0.2')
     manifest_genenerator.add_ait_keywords('KLD')
     manifest_genenerator.add_ait_keywords('image')
     manifest_genenerator.add_ait_keywords('brightness')
+    manifest_genenerator.add_ait_keywords('contrast')
+    manifest_genenerator.add_ait_keywords('exposure')
     manifest_genenerator.add_ait_licenses('Apache License Version 2.0')
     manifest_genenerator.set_ait_quality('https://ait-hub.pj.aist.go.jp/ait-hub/api/0.0.1/qualityDimensions/機械学習品質マネジメントガイドライン第三版/B-1データセットの被覆性')
     
     inventory_requirement_data = manifest_genenerator.format_ait_inventory_requirement(format_=['*'])
     
+    dataset_a_description = (
+        '画像データ群AのZIPファイル\n'
+        '・ディレクトリ唯一をZIP圧縮の対象とする\n'
+        '・ディレクトリの直下にデータセットAのjpgファイルを全て格納する\n'
+        '・ディレクトリの名称がxxxである場合、ZIPのファイル名はxxx.zipとする'
+    )
     manifest_genenerator.add_ait_inventories(name='datasetA', 
                                              type_='dataset', 
-                                             description='画像データ群AのZIPファイル ※画像はjpg', 
+                                             description=dataset_a_description, 
                                              requirement=manifest_genenerator.format_ait_inventory_requirement(format_=['zip']))
-    
+
+    dataset_b_description = (
+        '画像データ群BのZIPファイル\n'
+        '・ディレクトリ唯一をZIP圧縮の対象とする\n'
+        '・ディレクトリの直下にデータセットBのjpgファイルを全て格納する\n'
+        '・ディレクトリの名称がxxxである場合、ZIPのファイル名はxxx.zipとする'
+    )
     manifest_genenerator.add_ait_inventories(name='datasetB', 
                                              type_='dataset', 
-                                             description='画像データ群BのZIPファイル ※画像はjpg', 
+                                             description=dataset_b_description, 
                                              requirement=manifest_genenerator.format_ait_inventory_requirement(format_=['zip']))
     
     manifest_genenerator.add_ait_measures(name='KLD_of_brightness', 
@@ -649,7 +667,7 @@ def main() -> None:
 
 # [uneditable]
 
-# In[ ]:
+# In[29]:
 
 
 if __name__ == '__main__':
@@ -660,7 +678,7 @@ if __name__ == '__main__':
 
 # [required]
 
-# In[ ]:
+# In[30]:
 
 
 ## sample ##
@@ -672,7 +690,7 @@ ait_creation_year='2024'
 
 # [uneditable] 
 
-# In[ ]:
+# In[31]:
 
 
 if not is_ait_launch:

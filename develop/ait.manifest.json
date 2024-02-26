@@ -1,13 +1,15 @@
 {
   "name": "eval_dataset_image_3features_kld",
-  "description": "2つの画像データ群を入力し、その明度分布についてKLD(KLダイバージェンス、KL情報量)を算出する\nKLDが0に近いほど、2つの画像群は同じ明度特徴を再現していると評価できる",
+  "description": "2つの画像データ群を入力し、それらの明度、コントラスト、露光の分布についてKLD(KLダイバージェンス、KL情報量)を算出する。\nKLDが0に近いほど、2つの画像群は同じ特徴を再現していると評価できる。",
   "source_repository": "https://github.com/aistairc/Qunomon_AIT_eval_dataset_image_3features_kld",
   "version": "0.2",
   "quality": "https://ait-hub.pj.aist.go.jp/ait-hub/api/0.0.1/qualityDimensions/機械学習品質マネジメントガイドライン第三版/B-1データセットの被覆性",
   "keywords": [
     "KLD",
     "image",
-    "brightness"
+    "brightness",
+    "contrast",
+    "exposure"
   ],
   "references": [],
   "licenses": [
@@ -17,7 +19,7 @@
     {
       "name": "datasetA",
       "type": "dataset",
-      "description": "画像データ群AのZIPファイル ※画像はjpg",
+      "description": "画像データ群AのZIPファイル\n・ディレクトリ唯一をZIP圧縮の対象とする\n・ディレクトリの直下にデータセットAのjpgファイルを全て格納する\n・ディレクトリの名称がxxxである場合、ZIPのファイル名はxxx.zipとする",
       "requirement": {
         "format": [
           "zip"
@@ -27,7 +29,7 @@
     {
       "name": "datasetB",
       "type": "dataset",
-      "description": "画像データ群BのZIPファイル ※画像はjpg",
+      "description": "画像データ群BのZIPファイル\n・ディレクトリ唯一をZIP圧縮の対象とする\n・ディレクトリの直下にデータセットBのjpgファイルを全て格納する\n・ディレクトリの名称がxxxである場合、ZIPのファイル名はxxx.zipとする",
       "requirement": {
         "format": [
           "zip"
