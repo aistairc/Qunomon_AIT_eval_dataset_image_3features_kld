@@ -548,7 +548,7 @@ def exposure(image):
 # should edit
 #########################################
 @log(logger)
-@ait_main(ait_output, path_helper)
+@ait_main(ait_output, path_helper, is_ait_launch)
 def main() -> None:
     # from AIT parameter
     datasetA_path = ait_input.get_inventory_path(datasetA_name)
