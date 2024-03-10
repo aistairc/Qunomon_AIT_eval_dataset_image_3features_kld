@@ -175,7 +175,7 @@ if not is_ait_launch:
     )
     manifest_genenerator.set_ait_description(ait_description)
     manifest_genenerator.set_ait_source_repository('https://github.com/aistairc/Qunomon_AIT_eval_dataset_image_3features_kld')
-    manifest_genenerator.set_ait_version('0.2')
+    manifest_genenerator.set_ait_version('0.3')
     manifest_genenerator.add_ait_keywords('KLD')
     manifest_genenerator.add_ait_keywords('image')
     manifest_genenerator.add_ait_keywords('brightness')

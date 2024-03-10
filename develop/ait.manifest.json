@@ -2,7 +2,7 @@
   "name": "eval_dataset_image_3features_kld",
   "description": "2つの画像データ群を入力し、それらの明度、コントラスト、露光の分布についてKLD(KLダイバージェンス、KL情報量)を算出する。\nKLDが0に近いほど、2つの画像群は同じ特徴を再現していると評価できる。",
   "source_repository": "https://github.com/aistairc/Qunomon_AIT_eval_dataset_image_3features_kld",
-  "version": "0.2",
+  "version": "0.3",
   "quality": "https://ait-hub.pj.aist.go.jp/ait-hub/api/0.0.1/qualityDimensions/機械学習品質マネジメントガイドライン第三版/B-1データセットの被覆性",
   "keywords": [
     "KLD",
