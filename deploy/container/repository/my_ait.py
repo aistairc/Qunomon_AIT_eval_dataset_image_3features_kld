@@ -89,12 +89,12 @@ if not is_ait_launch:
 
 
 if not is_ait_launch:
-    requirements_generator.add_package('pandas', '2.0.3')
+    requirements_generator.add_package('pandas', '2.2.3')
     requirements_generator.add_package('seaborn', '0.13.2')
     requirements_generator.add_package('opencv-python', '4.9.0.80')
     requirements_generator.add_package('numpy', '1.26.3')
     requirements_generator.add_package('matplotlib', '3.7.3')
-    requirements_generator.add_package('scikit-learn', '1.3.2')
+    requirements_generator.add_package('scikit-learn', '1.5.2')
     requirements_generator.add_package('scipy', '1.10.1')
 
 
@@ -175,7 +175,7 @@ if not is_ait_launch:
     )
     manifest_genenerator.set_ait_description(ait_description)
     manifest_genenerator.set_ait_source_repository('https://github.com/aistairc/Qunomon_AIT_eval_dataset_image_3features_kld')
-    manifest_genenerator.set_ait_version('0.4')
+    manifest_genenerator.set_ait_version('0.5')
     manifest_genenerator.add_ait_keywords('KLD')
     manifest_genenerator.add_ait_keywords('image')
     manifest_genenerator.add_ait_keywords('brightness')
