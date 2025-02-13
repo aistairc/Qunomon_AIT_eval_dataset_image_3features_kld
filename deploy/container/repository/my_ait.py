@@ -38,7 +38,7 @@
 
 # [uneditable]
 
-# In[1]:
+# In[ ]:
 
 
 # Determine whether to start AIT or jupyter by startup argument
@@ -91,11 +91,11 @@ if not is_ait_launch:
 if not is_ait_launch:
     requirements_generator.add_package('pandas', '2.2.3')
     requirements_generator.add_package('seaborn', '0.13.2')
-    requirements_generator.add_package('opencv-python', '4.10.0.84')
-    requirements_generator.add_package('numpy', '1.26.4')
-    requirements_generator.add_package('matplotlib', '3.9.4')
-    requirements_generator.add_package('scikit-learn', '1.6.0')
-    requirements_generator.add_package('scipy', '1.13.1')
+    requirements_generator.add_package('opencv-python', '4.11.0.86')
+    requirements_generator.add_package('numpy', '2.2.2')
+    requirements_generator.add_package('matplotlib', '3.10.0')
+    requirements_generator.add_package('scikit-learn', '1.6.1')
+    requirements_generator.add_package('scipy', '1.15.1')
 
 
 # #### #3-3 [uneditable]
@@ -175,7 +175,7 @@ if not is_ait_launch:
     )
     manifest_genenerator.set_ait_description(ait_description)
     manifest_genenerator.set_ait_source_repository('https://github.com/aistairc/Qunomon_AIT_eval_dataset_image_3features_kld')
-    manifest_genenerator.set_ait_version('0.7')
+    manifest_genenerator.set_ait_version('0.8')
     manifest_genenerator.add_ait_keywords('KLD')
     manifest_genenerator.add_ait_keywords('image')
     manifest_genenerator.add_ait_keywords('brightness')
